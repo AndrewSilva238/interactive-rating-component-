@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+
+main { display: flex;  min-height: 100vh; background-color: hsl(216, 12%, 8%); font-family: 'Overpass', sans-serif; }
+
+.attribution { color: hsl(0, 0%, 100%); }
+
+.container-interactive-component { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+.card { max-width: 350px; padding: 20px; border-radius: 30px; background-color: hsl(213, 19%, 13%); color: hsl(0, 0%, 100%); margin-bottom: 10px; }
+
+.card h2 { font-size: 28px; margin-bottom: 16px; }
+
+.card p { font-size: 15px; color: hsl(217, 12%, 63%); }
+
+
+.card-body { padding: 0; margin-top: 30px; }
+
+.card-body a { display: flex; justify-content: center; text-align: center; margin-top: 20px; border-radius: 20px; text-transform: uppercase; letter-spacing: 3px; background-color: hsl(216, 12%, 54%); border-color: hsl(216, 12%, 54%); pointer-events: none; opacity: .5; transition: all .3s; }
+
+.card-body .btn-group:has(input:checked) ~ a { pointer-events: auto; background-color: hsl(25, 97%, 53%); border-color: hsl(25, 97%, 53%); opacity: 1; } 
+
+.card-body .btn-group + a:first-of-type:hover,
+.card-body .btn-group + a:first-of-type:active { background-color: hsl(0, 0%, 100%); border-color: hsl(0, 0%, 100%); color: hsl(25, 97%, 53%); }
+
+.card-body .btn-group { width: 100%; justify-content: space-between; }
+
+.card-body .btn-group label { display: flex; align-items: center; justify-content: center; padding: 10px; max-width: 50px; border-radius: 50% !important; border-color: hsl(213, 19%, 18%); background-color: hsl(213, 19%, 18%); }
+
+.card-body .btn-group label:hover { background-color: hsl(217, 12%, 63%); border-color: hsl(217, 12%, 63%); color: hsl(0, 0%, 100%); }
+
+.card-body .btn-group label:active,
+.card-body .btn-group input:checked + label {  background-color: hsl(25, 97%, 53%); border-color: hsl(25, 97%, 53%); color: hsl(0, 0%, 100%); }
+
+.container-interactive-component .row:nth-of-type(1) .card-img-top { width: 45px; height: 45px; padding: 14px; border-radius: 50px; border-color: hsl(213, 19%, 18%); background-color: hsl(213, 19%, 18%); }
+
+.container-interactive-component .row:nth-of-type(2) .card-img-top { width: 50%; height: 50%; margin: 10px auto; }
+
+.container-interactive-component .row:nth-of-type(2) .card { text-align: center; }
+
+.container-interactive-component .row:nth-of-type(2) .card-body { margin: 10px 0; }
+
+.container-interactive-component .row:nth-of-type(2) span { display: none; margin-bottom: 20px; padding: 5px 10px; border: 1px solid hsl(213, 19%, 18%); border-radius: 20px; color: hsl(25, 100%, 65%); background-color: hsl(213, 19%, 18%);  }
+
+/*Changing Span in the Thank You Card with has selector */
+
+.container-interactive-component .row:has(input:nth-of-type(1):checked) + .row span:nth-of-type(1) { display: inline-block; }
+
+.container-interactive-component .row:has(input:nth-of-type(2):checked) + .row span:nth-of-type(2) { display: inline-block; }
+
+.container-interactive-component .row:has(input:nth-of-type(3):checked) + .row span:nth-of-type(3) { display: inline-block; }
+
+.container-interactive-component .row:has(input:nth-of-type(4):checked) + .row span:nth-of-type(4) { display: inline-block; }
+
+.container-interactive-component .row:has(input:nth-of-type(5):checked) + .row span:nth-of-type(5) { display: inline-block; }
+
+#card-how-did-we-do:target { display: none; }
+
+#card-how-did-we-do:not(:target) + .row { display: none; }
+
